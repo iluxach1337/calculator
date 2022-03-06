@@ -1,0 +1,242 @@
+print('Calculator')
+print('choose an action')
+c = 'l'
+while c == 'l':
+    print('1. Arithmetic calculations (addition, subtraction, multiplication, division)')
+    print('2. Trigonometric calculations (sin, cos, tg, ctg, etc.')
+    print('3. Bitwise logical calculations (Bitwise AND, bitwise OR, etc.)')
+    print('4. The power of a number')
+    print('5. Factorial')
+    print('6. Natural logarithm')
+    print('7. Find NOK and NOD')
+    print('8. Conversion of a number from one number system to another (systems are set by the user)')
+    print('9. Calculate the area of a regular n-gon on a given side')
+    print('10. Find the roots of a quadratic equation by given coefficients')
+    a=int(input('number the operation:'))
+    if a==1:
+        b=' '
+        while b==' ':
+            print('+')
+            print('-')
+            print('*')
+            print('/')
+            op = input('select of operation : ')
+            f_num = float(input('input first number : ',))
+            s_num = float(input('input second number : ',))
+            if op == '+':
+                print('result : ', f_num + s_num)
+            elif op == '-':
+                print('result : ', f_num - s_num)
+            elif op == '*':
+                print('result : ', f_num * s_num)
+            elif op == '/':
+                if s_num == 0:
+                    print('error')
+                else:
+                    print('result : ', f_num / s_num)
+            else:
+                print('It seems you mixed up the operation, look at the list of possible')
+            b = input('Type "space" to continue working with arithmetic calculations, or press Enter to exit the main menu : ')
+    elif a == 2:
+        import math
+        b = ' '
+        while b == ' ':
+            print('"sin" - finding sine')
+            print('"cos" - finding the cosine')
+            print('"arcsin" - finding the inverse sine')
+            print('"arccos" - finding arc cosine')
+            print ('tg - finding tangent')
+            print('"arctg" - finding  the inverse tangent')
+            print('"ctg" - finding cotangent')
+            print('"arcctg" - finding arc cotangent')
+            op = input('Select the operation : ')
+            f_num = float(input('Enter the number (if the angle, then you need to enter it in degrees) : ',))
+            if op == 'sin':
+                f_num = f_num*math.pi/180
+                s_num = math.sin(f_num)
+                print('Result :', s_num)
+            elif op == 'cos':
+                 f_num = f_num*math.pi/180
+                 s_num = math.cos(f_num)
+                 print('Result :', s_num)
+            elif op == 'tg':
+                 f_num = f_num*math.pi/180
+                 s_num = math.tan(f_num)
+                 print('Result :', s_num)
+            elif op == 'ctg':
+                 f_num = f_num*math.pi/180
+                 s_num = 1/math.tan(f_num)
+                 print('Result :', s_num)
+            elif op == 'arcsin':
+                if -1 <= f_num <= 1:
+                     s_num = math.asin(f_num)
+                     s_num = s_num*180/math.pi
+                     print('Result : ', s_num)
+                else:
+                     print('The value of the variable when counting inverse trigonometric functions should be in the range [-1,1]')
+            elif op == 'arccos':
+                if -1 <= f_num <= 1:
+                    s_num = math.acos(f_num)
+                    s_num = s_num*180/math.pi
+                    print('Result : ', s_num)
+                else:
+                    print('The value of the variable when counting inverse trigonometric functions should be in the range [-1,1]')
+            elif op == 'arctg':
+                if -1 <= f_num <= 1:
+                    s_num = math.atan(f_num)
+                    s_num = s_num*180/math.pi
+                    print('Result : ', s_num)
+                else:
+                    print('The value of the variable when counting inverse trigonometric functions must be in the range [-1,1]')
+            elif op == 'arcctg':
+                if -1 <= f_num <= 1:
+                    s_num = 1/math.atan(f_num)
+                    s_num = s_num*180/math.pi
+                    print('Result : ', s_num)
+                else:
+                    print('The value of the variable when counting inverse trigonometric functions should be in the range [-1,1]')
+            elif op == 'arcctg':
+                if -1 <= f_num <= 1:
+                    s_num = 1/math.atan(f_num)
+                    s_num = s_num*180/math.pi
+                    print('result : ', s_num)
+                else:     
+                    print('The value of the variable when counting inverse trigonometric functions should be in the range [-1,1]')
+            b = input('Type "space" to continue working with trigonometric calculations, or press Enter to exit the main menu : ',)
+    elif a == 3:
+        b = ' '
+        while b == ' ':
+              print('"AND" - bitwise operator and')
+              print('"OR" - bitwise operator or')
+              print('"XOR" is the bitwise xor operator')
+              print('"OC" is the Ones Compliment bitwise operator')
+              print('"LS" is the Left Shift bitwise operator')
+              print('"RS" is the Right Shift bitwise operator')
+              print('For the OC operator, only the first number matters')
+              op = input('Select the operation : ',)
+              f_num = int(input('Enter the first number : ',))
+              s_num = int(input('Enter the second number : ',))
+              if op == 'AND':
+                  print('Result : ', f_num & s_num)
+              elif op == 'OR':
+                    print('Result : ', f_num | s_num)
+              elif op == 'XOR':
+                    print('Result : ', f_num ^ s_num)
+              elif op == 'OC':
+                    print('Result : ', ~ f_num)
+              elif op == 'LS':
+                    print('Result : ', f_num << s_num)
+              elif op == 'RS':
+                    print('Result : ', f_num >> s_num)
+              else:
+                    print('It seems you mixed up the operation, look at the list of possible')
+              b = input('Type "space" to continue working with bitwise calculations, or press Enter to exit the main menu : ',)
+    elif a == 4:
+        b = ' '
+        while b == ' ':
+            f_num = float(input('Enter a number : ',))
+            s_num = float(input('Enter the degree to which you want to raise the number : '))
+            print('Result : ', f_num**s_num)
+            b = input('Enter "space" to continue with the calculation of the power of a number, or press Enter to exit the main menu : ',)
+    elif a == 5:
+        b = ' '
+        while b == ' ':
+            f_num = int(input('Enter the number whose factorial you want to find : '))
+            s_num = 1
+            for f_num in range(1, f_num + 1):
+                s_num = s_num*f_num
+            print('Factorial : ', s_num)
+            b = input('Type "space" to continue working with arithmetic calculations, or press Enter to exit the main menu : ',)
+    elif a == 6:
+        import math
+        b = ' '
+        while b == ' ':
+            f_num = float(input('Enter the argument whose natural logarithm you need to find : '))
+            if f_num <= 0:
+                f_num = float(input('Enter an argument that is greater than zero : ',))
+            else:
+                pass
+            s_num = math.log(math.e, f_num)
+            print('The natural logarithm is : ', s_num)
+            b = input('Enter "space" to continue working with the logarithm calculation, or press Enter to exit the main menu : ',)
+    elif a == 7:
+        import math
+        b = ' '
+        while b == ' ':
+            print('NOD')
+            print('NOK')
+            op = input('select the operation:')
+            f_num = int(input('Enter the first number '))
+            s_num = int(input('Enter the second number '))
+            if op == 'NOD' :
+              # ѕока какое-нибудь из двух числе не будет равно 0,
+                while f_num != 0 and s_num != 0:
+                    # сравнивать их между собой.
+                    # ≈сли первое число больше второго,
+                    if f_num > s_num:
+                        # то находить остаток от делени€ его на второе число 
+                        # и присваивать его первой переменной
+                       f_num = f_num % s_num
+                    # »наче (когда второе число больше первого)
+                    else:
+                            # присваивать второй переменной остаток от делени€ 
+                            # нацело второго числа на первое
+                            s_num = s_num % f_num
+ 
+                            # ќдно из чисел содержит 0, а другое - Ќќƒ, но какое - неизвестно.
+                            # ѕроще их сложить, чем писать конструкцию if-else
+                gcd = f_num + s_num
+                print(gcd)
+            elif op == 'NOK':
+                i = min(f_num, s_num)
+                while True:
+                    if i%f_num==0 and i%s_num==0:
+                        break
+                    i += 1
+                print(i)
+            else:
+                print('It seems you mixed up the operation, look at the list of possible')
+                b = input('Enter "space" to continue working with the NOD and NOK calculation, or press Enter to exit the main menu : ',)
+    elif a == 8:
+        b = ' '
+        while b == ' ':
+            def convert_base(symbols: str , from_base: int, to_base: int) -> str:
+                alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                total, result, symbols = 0, "", symbols.upper()
+                for symbol in symbols:
+                    total = total * from_base + alphabet.index(symbol)
+                while total > 0:
+                    total, index = divmod(total, to_base)
+                    result = alphabet[index] + result
+                return result if result else "0"
+                print('result: ', result)
+            b = input('Enter "space" to continue working with the convert base calculation, or press Enter to exit the main menu : ',)            
+    elif a == 9:
+        b = ' '
+        while b == ' ':
+            from math import tan, pi
+            n_sides = int(input("Input number of sides: "))
+            s_length = float(input("Input the length of a side: "))
+            p_area = n_sides * (s_length ** 2) / (4 * tan(pi / n_sides))
+            print("The area of the polygon is: ",p_area)
+        b = input('Enter "space" to continue working with the calculation, or press Enter to exit the main menu : ',)
+    elif a == 10:
+         b = ' '
+         while b == ' ':
+            import math
+            a = int(input("Enter value of a= "))
+            b = int(input("Enter the value of b= "))
+            c = int(input("Enter the value of c= "))
+            D = b ** 2 - 4 * a * c
+            print(D)
+            if D < 0:
+                print("no roots")
+            elif D == 0:
+                x = -b / 2 * a
+                print (x)
+            else:
+                x1 = (-b + math.sqrt(D)) / (2 * a)
+                x2 = (-b - math.sqrt(D)) / (2 * a)
+                print(x1)
+                print(x2)
+         b = input('Enter "space" to continue working with the calculation, or press Enter to exit the main menu : ',)
